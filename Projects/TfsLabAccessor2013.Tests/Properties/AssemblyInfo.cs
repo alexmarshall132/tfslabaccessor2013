@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TfsLabAccessor2013.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("PCL Constructors Inc.")]
+[assembly: AssemblyCompany("West Peaks Consulting.")]
 [assembly: AssemblyProduct("TfsLabAccessor2013.Tests")]
-[assembly: AssemblyCopyright("Copyright © PCL Constructors Inc. 2016")]
+[assembly: AssemblyCopyright("Copyright © West Peaks Consulting. 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
