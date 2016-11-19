@@ -18,6 +18,16 @@
         private readonly NetworkCredential credentials;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Tfs2013LabAccessor"/> class. Use this
+        /// constructor by default, as this should provide the correct access on a Test Agent
+        /// by the agent principal executing the automated tests.
+        /// </summary>
+        public Tfs2013LabAccessor()
+            : this(CredentialCache.DefaultNetworkCredentials)
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Tfs2013LabAccessor"/> class.
         /// </summary>
         /// <param name="credentials">
