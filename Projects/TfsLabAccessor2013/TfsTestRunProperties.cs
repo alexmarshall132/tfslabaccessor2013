@@ -171,7 +171,7 @@ namespace TfsLabAccessor2013
                     continue;
                 }
 
-                property.GetSetMethod(true).Invoke(runProperties, new[] { converter.ConvertFrom(kvp.Value) });
+                property.GetSetMethod(true).Invoke(runProperties, new[] { kvp.Value.GetType() == property.PropertyType ? kvp.Value : converter.ConvertFrom(kvp.Value) });
             }
 
             runProperties.IsValid = true;
