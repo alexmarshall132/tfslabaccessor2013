@@ -54,7 +54,7 @@
                 throw new ArgumentNullException("runProperties");
             }
 
-            TfsTeamProjectCollection teamProjectCollection = TfsTeamProjectCollectionFactory.GetTeamProjectCollection(runProperties.TfsServerCollectionUrl);
+            TfsTeamProjectCollection teamProjectCollection = TfsTeamProjectCollectionFactory.GetTeamProjectCollection(new Uri(runProperties.TfsServerCollectionUrl));
 
             teamProjectCollection.Credentials = this.credentials;
 

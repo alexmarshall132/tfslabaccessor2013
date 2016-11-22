@@ -57,7 +57,7 @@ namespace TfsLabAccessor2013.Tests
             Assert.AreEqual(4, runProperties.TestPlanId, "TestPlanId must match");
             Assert.AreEqual("Chrome", runProperties.TestConfigurationName, "TestConfigurationName must match");
             Assert.AreEqual(12, runProperties.TestPointId, "TestPointId must match");
-            Assert.AreEqual(@"http://vsalm:8080/tfs/fabrikamfibercollection", runProperties.TfsServerCollectionUrl.AbsoluteUri, "TfsServerCollectionUrl must match");
+            Assert.AreEqual(@"http://vsalm:8080/tfs/fabrikamfibercollection", runProperties.TfsServerCollectionUrl, "TfsServerCollectionUrl must match");
             Assert.AreEqual("Any CPU", runProperties.BuildPlatform, "BuildPlatform must match");
             Assert.AreEqual("New Build Definition 1_20130222.7", runProperties.BuildNumber, "BuildNumber must match");
             Assert.AreEqual("Debug", runProperties.BuildFlavor, "BuildFlavor must match");
