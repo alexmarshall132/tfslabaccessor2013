@@ -83,7 +83,7 @@ namespace TfsLabAccessor2013
         /// Gets the URL of the TFS Team Project Collection that holds the Team Project that owns
         /// the currently executing Test Method.
         /// </summary>
-        public Uri TfsServerCollectionUrl { get; private set; }
+        public string TfsServerCollectionUrl { get; private set; }
 
         /// <summary>
         /// Gets the build platform of the current test run.

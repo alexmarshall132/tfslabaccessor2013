@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Alex Marshall</authors>
+    <owners>West Peaks Consulting</owners>
+    <licenseUrl>https://github.com/alexmarshall132/tfslabaccessor2013</licenseUrl>
+    <projectUrl>https://github.com/alexmarshall132/tfslabaccessor2013</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+        A simple library that provides strongly-typed access to the TFS Lab Management variables
+        injected into automated test runs by Microsoft Test Manager. Provides helpers for parsing
+        variables into a strongly typed objects, and retrieving Configuration information from
+        the TFS Test Manager during a Test Run.
+    </description>
+    <releaseNotes>
+        Added a description for the project, fixed one of the data types on TfsTestRunProperties
+        to match the strongly typed objects passed in as TestContext.Properties by Test Manager.
+    </releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>TFS Test Manager TestManager Automated Tests</tags>
+  </metadata>
+</package>
