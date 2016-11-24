@@ -7,8 +7,19 @@
     using Microsoft.TeamFoundation.TestManagement.Client;
 
     /// <summary>
+    /// <para>
     /// Default implementation of <see cref="ITfsLabAccessor2013"/> that uses the TFS
-    /// SDK to access TFS.
+    /// SDK to access TFS. 
+    /// </para>
+    /// <para>
+    /// In order to use this object during a test run, you must place a call to its method
+    /// in a [TestInitialize] method. When using this with a Test Agent, the agent must
+    /// be running on a machine that has Visual Studio 2013 installed, and the user that
+    /// is executing the test must have opened Visual Studio 2013 and connected to your
+    /// TFS server in order to populate the Windows credential cache so that 
+    /// <see cref="CredentialCache.DefaultNetworkCredentials"/> can be used during the
+    /// test run to connect to the TFS server.
+    /// </para>
     /// </summary>
     public class Tfs2013LabAccessor : ITfsLabAccessor2013
     {
@@ -71,7 +82,7 @@
 
             if (testConfiguration == null)
             {
-                throw new InvalidOperationException(String.Format("Failed to find test configuration with ID '{0}'", runProperties.TestConfigurationId));
+                throw new InvalidOperationException(String.Format("Failed to find test configuration with ID '{0}'. If you're running this tool in a test run managed by VSTS, you make need to upgrade your license for the user executing the test run.", runProperties.TestConfigurationId));
             }
 
             return testConfiguration.Values;

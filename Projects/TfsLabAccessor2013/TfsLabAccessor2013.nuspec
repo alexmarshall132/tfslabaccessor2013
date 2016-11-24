@@ -13,11 +13,39 @@
         A simple library that provides strongly-typed access to the TFS Lab Management variables
         injected into automated test runs by Microsoft Test Manager. Provides helpers for parsing
         variables into a strongly typed objects, and retrieving Configuration information from
-        the TFS Test Manager during a Test Run.
+        the TFS Test Manager during a Test Run. In order to use this library, you must ensure that
+        the following criteria are met:
+        * You're running your Test Agent on a machine with Visual Studio 2013 installed
+        * You're running your Test Agent under a user that has interactively logged on to the system,
+        has opened Visual Studio 2013 and connected to your TFS server and authenticated to populate
+        the Windows credential cache for the user.
+        * The build of the test assembly that uses this library includes the following required
+        assemblies that ship with Visual Studio 2013 (we can't include them for licensing reasons):
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.Build.Client.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.Build.Common.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.Client.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.Common.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.Diff.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.TestManagement.Client.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.TestManagement.Common.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.VersionControl.Client.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.VersionControl.Common.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.VersionControl.Common.Integration.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.WorkItemTracking.Client.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.WorkItemTracking.Common.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v4.5\Microsoft.VisualStudio.Services.Client.dll
+        -- C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v4.5\Microsoft.VisualStudio.Services.Common.dll
+        * The build of the test assembly that uses this library includes the aforementioned Visual Studio 2013
+        assemblies with the &lt;Private&gt;TrueC&lt;/Private&gt; element in their Reference elements
+        in the .(cs|vb|fs)proj, and includes them in the test deployment with explicit [DeploymentItem()]
+        declarations.
     </description>
     <releaseNotes>
-        Added a description for the project, fixed one of the data types on TfsTestRunProperties
-        to match the strongly typed objects passed in as TestContext.Properties by Test Manager.
+        Improving error handling; updating the Nuget package description and comments to include
+        more help for getting started with the library.
     </releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>TFS Test Manager TestManager Automated Tests</tags>

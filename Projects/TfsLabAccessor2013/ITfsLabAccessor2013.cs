@@ -1,6 +1,6 @@
 ﻿//  -----------------------------------------------------------------------
-//  <copyright file="ITfsLabAccessor2013.cs" company="PCL Constructors Ltd.">
-//      Copyright (c) PCL Constructors Ltd. All rights reserved.
+//  <copyright file="ITfsLabAccessor2013.cs" company="West Peaks Consulting.">
+//      Copyright (c) West Peaks Consulting. All rights reserved.
 //  </copyright>
 // -----------------------------------------------------------------------
 namespace TfsLabAccessor2013
